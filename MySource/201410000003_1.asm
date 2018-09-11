@@ -1,0 +1,94 @@
+.model
+.STACK
+.code
+    main PROC
+        
+        MOV AH,1       ;Input 1
+        INT 21h
+        MOV BL,AL
+        SUB BL,48
+        
+        MOV AH,2
+        MOV DL,0ah     ;/n
+        INT 21h
+        
+        MOV DL,0dh     ;/n
+        INT 21h
+         
+        
+        MOV AH,1       ;Input 2
+        INT 21h 
+        MOV CL,AL
+        SUB CL,48
+        
+        
+        MOV AH,2
+        MOV DL,0ah     ;/n
+        INT 21h
+        
+        MOV DL,0dh     ;/n
+        INT 21h
+        
+        ADD CL,BL      ;adding 2 values in cl  
+        ADD CL,48
+        
+        MOV AH,1
+        INT 21h
+        SUB AL,48
+        
+        ADD CL,AL      ;new input and add 3 values 
+        ADD CL,48
+        
+        MOV AH,2
+        MOV DL,0ah     ;/n
+        INT 21h
+        
+        MOV DL,0dh     ;/n
+        INT 21h
+        
+        
+        
+        MOV AH,1
+        INT 21h        ;Input 4
+        SUB AL,48
+       
+        ADD CL,AL      ; adding last input
+              
+        
+        
+        
+        
+        MOV AH,2
+        MOV DL,0ah     ;/n
+        INT 21h
+        
+        MOV DL,0dh     ;/n
+        INT 21h     
+               
+        MOV AH,2       
+        
+        MOV DL,CL      ;output of the value
+        SUB DL,48
+        
+        INT 21h
+        
+        
+        MOV DL,0ah     ;/n
+        INT 21h
+        
+        MOV DL,0dh     ;/n
+        INT 21h
+        
+        
+        
+        MOV AH,4ch     ;exiting
+        INT 21h
+        END main
+        main ENDP
+        
+         
+        
+        
+        
+        
+        

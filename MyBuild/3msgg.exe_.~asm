@@ -1,0 +1,49 @@
+.model small
+.STACK 100h
+.data
+msg DB 'Hello$'
+msg1 DB 'SEU$'
+msg3 DB 'Microprocessor$'
+
+.code
+MOV AX,@data
+MOV DS,AX
+
+MOV AH,9
+LEA DX,msg      ;msg
+INT 21h
+
+MOV AH,2
+MOV DL,0ah      ;new line
+INT 21h
+
+MOV AH,2        ;new line
+MOV DL,0dh
+INT 21h
+
+MOV AH,9
+LEA DX, msg1     ; msg1
+INT 21h
+
+MOV AH,2
+MOV DL,0ah      ;new line
+INT 21h
+
+MOV AH,2        ;new line
+MOV DL,0dh
+INT 21h
+
+MOV AH,9
+LEA DX,msg3     ; load msg3
+INT 21h
+
+MOV AH,4ch
+INT 21h
+
+END
+
+
+
+
+
+; [SOURCE]: C:\emu8086\MySource\3msgg.asm

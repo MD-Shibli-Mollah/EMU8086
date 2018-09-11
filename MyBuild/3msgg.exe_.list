@@ -1,0 +1,106 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+3msgg.exe_ -- emu8086 assembler version: 4.11 R439  
+ 
+[ 20-Apr-18  --  9:14:22 PM ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       .model small
+[   2]        :                                       .STACK 100h
+[   3]        :                                       .data
+[   4]    0100: 48 65 6C 6C 6F 24                     msg DB 'Hello$'
+[   5]    0106: 53 45 55 24                           msg1 DB 'SEU$'
+[   6]    010A: 4D 69 63 72 6F 70 72 6F 63 65 73 73   msg3 DB 'Microprocessor$'
+                6F 72 24                            
+[   7]        :                                       
+[   8]        :                                       .code
+[   9]    0125: B8 10 00                              MOV AX,@data
+[  10]    0128: 8E D8                                 MOV DS,AX
+[  11]        :                                       
+[  12]    012A: B4 09                                 MOV AH,9
+[  13]    012C: BA 00 00                              LEA DX,msg      ;msg
+[  14]    012F: CD 21                                 INT 21h
+[  15]        :                                       
+[  16]    0131: B4 02                                 MOV AH,2
+[  17]    0133: B2 0A                                 MOV DL,0ah      ;new line
+[  18]    0135: CD 21                                 INT 21h
+[  19]        :                                       
+[  20]    0137: B4 02                                 MOV AH,2        ;new line
+[  21]    0139: B2 0D                                 MOV DL,0dh
+[  22]    013B: CD 21                                 INT 21h
+[  23]        :                                       
+[  24]    013D: B4 09                                 MOV AH,9
+[  25]    013F: BA 06 00                              LEA DX, msg1     ; msg1
+[  26]    0142: CD 21                                 INT 21h
+[  27]        :                                       
+[  28]    0144: B4 02                                 MOV AH,2
+[  29]    0146: B2 0A                                 MOV DL,0ah      ;new line
+[  30]    0148: CD 21                                 INT 21h
+[  31]        :                                       
+[  32]    014A: B4 02                                 MOV AH,2        ;new line
+[  33]    014C: B2 0D                                 MOV DL,0dh
+[  34]    014E: CD 21                                 INT 21h
+[  35]        :                                       
+[  36]    0150: B4 09                                 MOV AH,9
+[  37]    0152: BA 0A 00                              LEA DX,msg3     ; load msg3
+[  38]    0155: CD 21                                 INT 21h
+[  39]        :                                       
+[  40]    0157: B4 4C                                 MOV AH,4ch
+[  41]    0159: CD 21                                 INT 21h
+[  42]        :                                       
+[  43]        :                                       END
+[  44]        :                                       
+[  45]        :                                       
+[  46]        :                                       
+ 
+===================================================================================================
+ 
+EXE HEADER - bytes from 0000 to 01FF inclusive.
+
+0000: 4D      -   exe signature (M)
+0001: 5A      -   exe signature (Z)
+0002: 5B      -   bytes on last page (l.byte)
+0003: 01      -   bytes on last page (h.byte)
+0004: 02      -   512 byte pages in file (l.byte)
+0005: 00      -   512 byte pages in file (h.byte)
+0006: 02      -   relocations (l.byte)
+0007: 00      -   relocations (h.byte)
+0008: 20      -   paragraphs in header (l.byte)
+0009: 00      -   paragraphs in header (h.byte)
+000A: 00      -   minimum memory (l.byte)
+000B: 00      -   minimum memory (h.byte)
+000C: FF      -   maximum memory (l.byte)
+000D: FF      -   maximum memory (h.byte)
+000E: 00      -   SS - stack segment (l.byte)
+000F: 00      -   SS - stack segment (h.byte)
+0010: 00      -   SP - stack pointer (l.byte)
+0011: 01      -   SP - stack pointer (h.byte)
+0012: B7      -   check sum (l.byte)
+0013: 4F      -   check sum (h.byte)
+0014: 00      -   IP - instruction pointer (l.byte)
+0015: 00      -   IP - instruction pointer (h.byte)
+0016: 12      -   CS - code segment (l.byte)
+0017: 00      -   CS - code segment (h.byte)
+0018: 1E      -   relocation table adress (l.byte)
+0019: 00      -   relocation table adress (h.byte)
+001A: 00      -   overlay number (l.byte)
+001B: 00      -   overlay number (h.byte)
+001C: 01      -   signature (l.byte)
+001D: 00      -   signature (h.byte)
+001E: 01      -   relocation table - offset inside segment (l.byte)
+001F: 00      -   relocation table - offset inside segment (h.byte)
+0020: 12      -   relocation table - segment anchor (l.byte)
+0021: 00      -   relocation table - segment anchor (h.byte)
+0022: 06      -   relocation table - offset inside segment (l.byte)
+0023: 00      -   relocation table - offset inside segment (h.byte)
+0024: 12      -   relocation table - segment anchor (l.byte)
+0025: 00      -   relocation table - segment anchor (h.byte)
+0026 to 01FF  -   reserved relocation area  (00) 
+
+
+
+
+===================================================================================================
